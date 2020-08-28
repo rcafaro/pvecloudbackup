@@ -13,10 +13,12 @@ apt install xdelta3 git
 
 clone repository to /root/pvecloudbackup on PVE node. On a farm, deploy to all nodes where backups run
 
-Then: 
-  echo "script: /root/pvecloudbackup/vzdump-hook-script.pl" >> /etc/vzdump.conf
+
+Then:
+
+echo "script: /root/pvecloudbackup/vzdump-hook-script.pl" >> /etc/vzdump.conf
   
-  chmod +x ~/pvecloudbackup/vzdump-hook-script.pl
+chmod +x ~/pvecloudbackup/vzdump-hook-script.pl
 
 
 **To run backups:**
