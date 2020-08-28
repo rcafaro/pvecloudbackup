@@ -9,6 +9,7 @@ Differential backups are small and easier to restore than incremental backups, s
 
 **To install:**
 
+apt install xdelta3 git 
 clone repository to /root/pvecloudbackup on PVE node. On a farm, deploy to all nodes where backups run
 
 Then: 
