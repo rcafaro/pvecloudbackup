@@ -9,11 +9,12 @@ Differential backups are small and easier to restore than incremental backups, s
 
 **To install:**
 
-download script to /root/ on PVE node. On a farm, deploy to all nodes where backups run
+clone repository to /root/pvecloudbackup on PVE node. On a farm, deploy to all nodes where backups run
 
 Then: 
   echo "script: /root/vzdump-hook-script.pl" >> /etc/vzdump.conf
-  chmod +x ~/vzdump-hook-script.pl
+  
+  chmod +x ~/pvecloudbackup/vzdump-hook-script.pl
 
 
 **To run backups:**
