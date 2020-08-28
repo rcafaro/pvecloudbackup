@@ -1,8 +1,11 @@
-# pvecloudbackup
+# PVECloudBackup
 Differential and cloud backup scripts for Proxmox VE
 
 This script uses the xdelta3 library and vzdump hook script to automatically generate weekly differential backups using Proxmox VE.
 Differential backups are small and easier to restore than incremental backups, since only the last full backup + the differential backup of the desired day are needed.
+
+**THIS VERSION HANDLES LOCAL DIFFERENTIAL BACKUPS. FUTURE VERSIONS WILL ALSO COPY THESE OVER TO A CLOUD PROVIDER OF CHOICE (WIP)**
+
 
 **To install:**
 download script to /root/ on PVE node. On a farm, deploy to all nodes where backups run
