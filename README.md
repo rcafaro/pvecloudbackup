@@ -7,23 +7,18 @@ Differential backups are small and easier to restore than incremental backups, s
 **THIS VERSION HANDLES LOCAL DIFFERENTIAL BACKUPS. FUTURE VERSIONS WILL ALSO COPY THESE OVER TO A CLOUD PROVIDER OF CHOICE (WIP)**
 
 
+## **To install:**
 
-**To install:**
-
-apt install xdelta3 git
-
-clone repository to /root/pvecloudbackup on PVE node. On a farm, deploy to all nodes where backups run
-
+    apt install xdelta3 git
+    clone repository to /root/pvecloudbackup on PVE node. On a farm, deploy to all nodes where backups run
 
 Then:
 
-echo "script: /root/pvecloudbackup/vzdump-hook-script.pl" >> /etc/vzdump.conf
-  
-chmod +x ~/pvecloudbackup/vzdump-hook-script.pl
+    echo "script: /root/pvecloudbackup/vzdump-hook-script.pl" >> /etc/vzdump.conf
+    chmod +x ~/pvecloudbackup/vzdump-hook-script.pl
 
 
-
-**To run backups:**
+## **To run backups:**
 
 Simply configure your backups on PVE to run **without compression**. This is required for proper xdelta3 operation. 
 Don't worry - you'll still be saving space since differentials are so much smaller.
@@ -32,8 +27,7 @@ When you wish to revert to regular PVE/vzdump behavior, simply select a compress
 Backup retention period is configurable in the script ($max variable). Day for full backup is configurable with $full_backup_day variable.
 
 
-
-**Restoring backups**
+## **Restoring backups**
 
 While *full* weekly backups are natively restorable using the proxmox UI, restoring a differential backup will require you first recreate a full backup from the delta file, and then restore using proxmox UI.
 
@@ -44,8 +38,8 @@ That would be something like:
   
 
 
-**Credits:**
+## **Credits:**
 
 This is largely based off these awesome sources:
-- https://github.com/jmacd/xdelta by Joshua McDonald
-- https://forum.proxmox.com/threads/new-feature-on-pve-console-differential-backup-for-qemu-vms.19098/ - by Daniel Mash
+* https://github.com/jmacd/xdelta by Joshua McDonald
+* https://forum.proxmox.com/threads/new-feature-on-pve-console-differential-backup-for-qemu-vms.19098/ - by Daniel Mash
