@@ -4,7 +4,7 @@ Differential and cloud backup scripts for Proxmox VE
 This script uses the xdelta3 library and vzdump hook script to automatically generate weekly differential backups using Proxmox VE.
 Differential backups are small and easier to restore than incremental backups, since only the last full backup + the differential backup of the desired day are needed.
 
-I tried other solutions available online such as [Ayufan's](https://ayufan.eu/projects/proxmox-ve-differential-backups/) UI-integrated solution but utlimately I decided to steer away from patching the PVE code and going with something that I could customize to my liking.
+I tried other solutions available online such as [Ayufan's](https://github.com/ayufan/pve-patches) UI-integrated solution but utlimately I decided to steer away from patching the PVE code and going with something that I could customize to my liking.
 
 This approach allows you to select full or differential backup simply by opting for compression (full) or no-compression (differential) on the PVE backup UI. 
 
